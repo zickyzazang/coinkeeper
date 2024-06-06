@@ -1,0 +1,65 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: linear_panel_1
+    properties: {}
+    type: LinearPanel
+    layout_properties: {grid_position: 'PVDQAJ,INUDTZ'}
+    components:
+    - name: column_panel_1
+      properties: {wrap_on: never}
+      type: ColumnPanel
+      components:
+      - name: column_panel_2
+        properties: {wrap_on: never}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'PNNETG,KALKMY'}
+        components:
+        - name: label_1
+          properties: {text: Beer price}
+          type: Label
+          layout_properties: {grid_position: 'HAJOZW,INUFRO'}
+        - name: beer_price_box
+          properties: {type: number, border: None, text: ''}
+          type: TextBox
+          layout_properties: {grid_position: 'HAJOZW,UCTWKW'}
+          event_bindings: {lost_focus: beer_price_box_lost_focus}
+        - name: label_2
+          properties: {text: Big beer price}
+          type: Label
+          layout_properties: {grid_position: 'HDZBHS,NTMXXA'}
+        - name: big_beer_price_box
+          properties: {border: None}
+          type: TextBox
+          layout_properties: {grid_position: 'HDZBHS,RRPVJV'}
+          event_bindings: {lost_focus: big_beer_price_box_lost_focus}
+        - name: label_3
+          properties: {text: Double beer price}
+          type: Label
+          layout_properties: {grid_position: 'MDQBCR,MPESZE'}
+        - name: double_beer_price_box
+          properties: {border: None, text: ''}
+          type: TextBox
+          layout_properties: {grid_position: 'MDQBCR,SESIRD'}
+          event_bindings: {lost_focus: double_beer_price_box_lost_focus}
+      layout_properties: {}
+  - name: reset_button
+    properties: {text: Reset, role: outlined-button, align: left, foreground: 'theme:Error'}
+    type: Button
+    layout_properties: {grid_position: 'PAUYQC,UELFMC'}
+    event_bindings: {click: reset_button_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- name: nav_column_1
+  properties: {}
+  type: form:NavColumn
+  layout_properties: {slot: left-nav}

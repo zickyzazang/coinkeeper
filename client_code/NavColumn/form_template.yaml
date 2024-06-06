@@ -1,0 +1,32 @@
+container:
+  type: ColumnPanel
+  properties: {border: None}
+components:
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'SJETTS,RYFTEV'}
+  components:
+  - name: overview_button
+    properties: {text: Overview}
+    type: Button
+    layout_properties: {grid_position: 'TJBKIM,JXVWQB'}
+    event_bindings: {click: overview_button_click}
+  - name: coins_button
+    properties: {text: Coins}
+    type: Button
+    layout_properties: {grid_position: 'VICAPH,NFVVFH'}
+    event_bindings: {click: coins_button_click}
+  - name: settings_button
+    properties: {text: Settings, visible: false}
+    type: Button
+    layout_properties: {grid_position: 'FDWKZS,SGEALH'}
+    data_bindings: []
+    event_bindings: {click: settings_button_click}
+  - name: logout_button
+    properties: {text: Logout}
+    type: Button
+    layout_properties: {grid_position: 'JCJYSK,ISMVRC'}
+    event_bindings: {click: logout_button_click}
+is_package: true
+custom_component: true

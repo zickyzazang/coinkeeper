@@ -1,0 +1,26 @@
+is_package: true
+container:
+  type: ColumnPanel
+  properties: {wrap_on: never}
+components:
+- name: column_panel_1
+  properties: {wrap_on: never}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'PBJFIF,GUERIW'}
+  components:
+  - name: balance_name
+    properties: {text: ''}
+    type: Label
+    layout_properties: {grid_position: 'MADYHL,ZDJGOF'}
+  - name: balance_payment_from
+    properties: {text: ''}
+    type: Label
+    layout_properties: {grid_position: 'MADYHL,CYFHNC'}
+  - name: balance_payemnt_to
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'MADYHL,RFUFIW'}
+  - name: balance
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'MADYHL,GJYAKI'}

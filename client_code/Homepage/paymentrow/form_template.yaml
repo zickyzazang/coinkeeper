@@ -1,0 +1,56 @@
+is_package: true
+container:
+  type: ColumnPanel
+  properties: {wrap_on: never}
+  data_bindings: []
+components:
+- name: column_panel_1
+  properties: {wrap_on: never, col_spacing: none}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'CKYPUT,JBSTKI'}
+  components:
+  - name: label_1
+    properties: {bold: true}
+    type: Label
+    layout_properties: {grid_position: 'VODQFJ,PERPXX'}
+    data_bindings:
+    - {property: text, code: 'self.item[''Name'']', writeback: false}
+  - name: add_1
+    properties:
+      text: '1
+
+        '
+      foreground: theme:Primary
+      background: theme:Primary Container
+      role: [no-wrap-button, filled-button]
+      icon: ''
+    type: Button
+    layout_properties: {grid_position: 'VODQFJ,VSDOOX'}
+    event_bindings: {click: add_1_click}
+    data_bindings: []
+  - name: add_15
+    properties:
+      text: 1,5
+      background: theme:Primary Container
+      foreground: theme:Primary
+      role: [filled-button, no-wrap-button]
+    type: Button
+    layout_properties: {grid_position: 'VODQFJ,VQHVDQ'}
+    event_bindings: {click: add_15_click}
+  - name: add_2
+    properties:
+      text: '2'
+      background: theme:Primary Container
+      role: [filled-button, no-wrap-button]
+      foreground: theme:Primary
+      spacing_above: none
+      spacing_below: none
+    type: Button
+    layout_properties: {grid_position: 'VODQFJ,DXZFRN'}
+    event_bindings: {click: add_2_click}
+    data_bindings: []
+  - name: other_amount
+    properties: {role: no-wrap-button, border: None, type: number}
+    type: TextBox
+    layout_properties: {grid_position: 'VODQFJ,FTKPHF'}
+    event_bindings: {change: other_amount_change}

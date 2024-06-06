@@ -1,0 +1,126 @@
+correct_dependency_ids: {}
+dependencies:
+- dep_id: dep_4ujrkqg83sey4e
+  version: {dev: false}
+  resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
+- dep_id: dep_pfgz86bs3jqqi
+  version: {dev: false}
+  resolution_hints: {app_id: MC5R7I24G2TD7FCW, name: login, package_name: Custom_User_Login_SignUP}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {enable_v2: false}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {require_secure_passwords: false, share_login_status: true, use_token: true,
+    use_email: true, allow_remember_me: true, allow_signup: true, enable_automatically: true,
+    confirm_email: false, remember_me_days: 30, use_google: true}
+  server_config: {user_table: users}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: Homepage}
+package_name: Cointoss
+allow_embedding: false
+name: Coinkeeper
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-sandbox
+  server_spec: {base: python310-standard}
+  server_spec_disabled: {requirements: '', base: python310-minimal}
+metadata: {title: Coinkeeper, logo_img: 'asset:Subject2.png'}
+startup_form: null
+db_schema:
+  categories:
+    title: Categories
+    client: search
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+  entries:
+    title: Entries
+    client: search
+    server: full
+    columns:
+    - name: title
+      admin_ui: {width: 200}
+      type: string
+    - name: content
+      admin_ui: {width: 200}
+      type: string
+    - name: image
+      admin_ui: {width: 200}
+      type: media
+    - name: created
+      admin_ui: {width: 200}
+      type: datetime
+    - name: updated
+      admin_ui: {width: 200}
+      type: datetime
+    - name: category
+      admin_ui: {width: 200}
+      type: link_single
+      target: categories
+  users:
+    client: full
+    server: full
+    columns:
+    - name: enabled
+      admin_ui: {order: 1, width: 200}
+      type: bool
+    - name: Name
+      admin_ui: {width: 200, order: 6}
+      type: string
+    - name: email
+      admin_ui: {order: 2, width: 200}
+      type: string
+    - name: last_login
+      admin_ui: {order: 3, width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {order: 4, width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {order: 5, width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {order: 6, width: 200}
+      type: bool
+    - name: remembered_logins
+      admin_ui: {order: 7, width: 200}
+      type: simpleObject
+    - name: signed_up
+      admin_ui: {order: 8, width: 200}
+      type: datetime
+    title: Users
+  payments:
+    client: full
+    server: full
+    columns:
+    - name: timestamp
+      admin_ui: {width: 200, order: 2}
+      type: datetime
+    - name: amount
+      admin_ui: {width: 200, order: 3}
+      type: number
+    - name: payment_from
+      admin_ui: {width: 200}
+      type: string
+    - name: payment_to
+      admin_ui: {width: 200}
+      type: string
+    title: payments
+  settings:
+    client: search
+    server: full
+    columns:
+    - name: Setting
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: Value
+      admin_ui: {width: 200, order: 1}
+      type: string
+    title: Settings
+renamed: true
